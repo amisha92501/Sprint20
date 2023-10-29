@@ -53,6 +53,22 @@
 		</dependency>
 
 	</dependencies>
+	<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.apache.maven.plugins</groupId>
+							<artifactId>maven-surefire-plugin</artifactId>
+							<version>3.1.2</version>
+							<configuration>
+								<suiteXmlFiles>
+									<suiteXmlFile>C:\Users\kumar\git\VVVTg\vtiger\testngraju.xml</suiteXmlFile>
+								</suiteXmlFiles>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
 
 	<profiles>
 		<profile>

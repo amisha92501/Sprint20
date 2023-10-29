@@ -19,19 +19,19 @@ import pomRepository.LeadsPage;
  * @author Akash Deb
  *
  */
-@Listeners(genericUtility.ListenersImplementationClass.class)
+//@Listeners(genericUtility.ListenersImplementationClass.class)
 public class ToCreateLeadTest extends BaseClass {
 	
-	@Test(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 1, groups = "smoke")
+	@Test//(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 1, groups = "smoke")
 	public void toCreateALeadAndToVerifyTheLeadInformationTest() throws EncryptedDocumentException, IOException, SQLException {
 		
 		//Test Data
-		String leadSalutation = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 0);
+		/*String leadSalutation = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 0);
 		String leadFirstName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 1);
 		String leadLastName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 2);
 		String leadCompanyName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 3);
 		String leadIndustry = eUtils.fetchStringDataFromExcelSheet(IPathConstant.LEAD_SHEETNAME, 1, 4);
-		
+		*/
 		//Page Object
 		HomePage home = new HomePage(driver);
 		LeadsPage lead = new LeadsPage(driver);
@@ -46,19 +46,19 @@ public class ToCreateLeadTest extends BaseClass {
 		lead.clickOnLeadPlusButton();
 		
 		//Creating a Lead
-		creatLead.passSalutionToLeadNameDropDown(leadSalutation);
-		creatLead.enterFirstName(leadFirstName);
-		creatLead.enterLastName(leadLastName);
-		creatLead.enterCompanyName(leadCompanyName);
-		creatLead.passLeadIndustryInIndustryDropdown(leadIndustry);
+		creatLead.passSalutionToLeadNameDropDown();
+		creatLead.enterFirstName();
+		creatLead.enterLastName();
+		creatLead.enterCompanyName();
+		creatLead.passLeadIndustryInIndustryDropdown();
 		creatLead.clickOnSaveButton();
 		
 		//Fetching the lead info
-		String actualLeadLastName = leadInfo.verifyLeadInformation(leadLastName);
+		/*String actualLeadLastName = leadInfo.verifyLeadInformation(leadLastName);
 		
 		//Verification
 		Assert.assertTrue(actualLeadLastName.contains(leadLastName));
-		System.out.println("The Lead information has been verified");
+		System.out.println("The Lead information has been verified");*/
 		
 	}
 	

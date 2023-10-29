@@ -77,18 +77,18 @@ public class CreatingNewProductPage {
 		return saveButton;
 	}
 
-	public void enterProductName(String productName) {
-		productNameTextField.sendKeys(productName);
+	public void enterProductName() {
+		productNameTextField.sendKeys("Addidas");
 	}
 
-	public void enterSalesStartDate(String startDate) {
+	public void enterSalesStartDate() {
 
-		salesStartDate.sendKeys(startDate);
+		salesStartDate.sendKeys("1999-03-18");
 	}
 
-	public void enterEndStartDate(String endDate) {
+	public void enterEndStartDate() {
 
-		salesStartDate.sendKeys(endDate);
+		salesStartDate.sendKeys("1999-08-18");
 	}
 	
 	public void clickOnVendorLookUpButton() {

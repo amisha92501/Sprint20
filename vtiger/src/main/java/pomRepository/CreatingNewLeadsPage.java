@@ -52,35 +52,35 @@ public class CreatingNewLeadsPage {
 		return saveButton;
 	}
 
-	public void passSalutionToLeadNameDropDown(String option) {
+	public void passSalutionToLeadNameDropDown() {
 
 		Select select = new Select(leadNameSalutatioknDropdown);
-		select.selectByVisibleText(option);
+		select.selectByVisibleText("Mr.");
 
 	}
 
-	public void enterFirstName(String firstName) {
+	public void enterFirstName() {
 
-		leadFirstNameTextbox.sendKeys(firstName);
-
-	}
-
-	public void enterLastName(String lastName) {
-
-		leadLastnameTextbox.sendKeys(lastName);
+		leadFirstNameTextbox.sendKeys("Mohan");
 
 	}
 
-	public void enterCompanyName(String companyName) {
+	public void enterLastName() {
 
-		leadCompanyNameTextbox.sendKeys(companyName);
+		leadLastnameTextbox.sendKeys("Yadav");
+
+	}
+
+	public void enterCompanyName() {
+
+		leadCompanyNameTextbox.sendKeys("Wipro");
 
 	}
 	
-	public void passLeadIndustryInIndustryDropdown(String option) {
+	public void passLeadIndustryInIndustryDropdown() {
 		
 		Select select = new Select(industryDropdown);
-		select.selectByVisibleText(option);
+		select.selectByVisibleText("Banking");
 	}
 	
 	public void clickOnSaveButton() {

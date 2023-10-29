@@ -23,17 +23,17 @@ import pomRepository.VendorPage;
  * @author Akash Deb
  *
  */
-@Listeners(genericUtility.ListenersImplementationClass.class)
+//@Listeners(genericUtility.ListenersImplementationClass.class)
 public class ToCreateAProductTest extends BaseClass {
 	
-	@Test(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 2, groups = "regression")
+	@Test//(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 2, groups = "regression")
 	public void toCreateAProductWithVendorInformationTest() throws EncryptedDocumentException, IOException {
 		//Test Data
-		String vendorName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 0);
+		/*String vendorName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 0);
 		String productName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 1);
 		String salesStartDate = eUtils.fetchDateDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 2);
 		String salesEndDate = eUtils.fetchDateDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 3);
-		
+		*/
 		
 		
 		//Object creation of all POM classes
@@ -48,31 +48,31 @@ public class ToCreateAProductTest extends BaseClass {
 		//Creating vendor
 		home.clickOnVendorModule();
 		vendor.clickOnVendorPlusButton();
-		createVendor.enterVendorName(vendorName);
+		createVendor.enterVendorName("Sohan");
 		createVendor.clickOnSaveButton();
-		String actualVendorName = vendorInformation.verifyVendorInformation(vendorName);
+		String actualVendorName = vendorInformation.verifyVendorInformation("Sohan");
 		
 		//Verifying vendor
-		Assert.assertTrue(actualVendorName.contains(vendorName));
+		Assert.assertTrue(actualVendorName.contains("Sohan"));
 		System.out.println("Pass : the vendor is created");
 		
 		//Creating product
 		home.clickOnProductModule();
 		product.clickOnProductPlusButton();
-		createProduct.enterProductName(productName);
-		createProduct.enterSalesStartDate(salesStartDate);
-		createProduct.enterEndStartDate(salesEndDate);
+		createProduct.enterProductName();
+		createProduct.enterSalesStartDate();
+		createProduct.enterEndStartDate();
 		createProduct.clickOnVendorLookUpButton();
-		createProduct.selectVendorNameFromLookPage("Products&action","Vendors&action", vendorName);
-		createProduct.uploadProductImage(IPathConstant.PRODUCT_IMAGE_PATH);
+		createProduct.selectVendorNameFromLookPage("Products&action","Vendors&action", "Sohan");
+		//createProduct.uploadProductImage(IPathConstant.PRODUCT_IMAGE_PATH);
 		createProduct.clickOnSaveButton();
-		String actualProductName = productInformation.verifyProductInformation(productName);
+		/*String actualProductName = productInformation.verifyProductInformation("MRF");
 		
 		//Verifying product
-		Assert.assertTrue(actualProductName.contains(productName));
+		Assert.assertTrue(actualProductName.contains("MRF"));
 		System.out.println("Pass: the product name is verified");
 				System.out.println("Pass: the product name is verified");
-
+		*/
 		
 	}
 

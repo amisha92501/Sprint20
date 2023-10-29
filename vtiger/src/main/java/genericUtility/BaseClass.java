@@ -41,7 +41,7 @@ public class BaseClass {
 	public Connection connection;
 
 	//Pre condition to connect to the data base
-	/*@BeforeSuite(groups = {"smoke", "regression"})
+	@BeforeSuite(groups = {"smoke", "regression"})
 	public void bsConfig() throws SQLException {
 		
 		Driver driver = new Driver();
@@ -51,45 +51,28 @@ public class BaseClass {
 
 		System.out.println("The Data base connection has been established");
 		
-	}*/
+	}
 	
-	@Parameters("browser")
 	@BeforeClass(groups = {"smoke", "regression"})
-	public void bcConfig(String browser) throws IOException {
-		
-		//String browser = fUtils.fetchDataFromPropertyFile("browser");
-		String url = fUtils.fetchDataFromPropertyFile("url");
-
-		
-		if(browser.equals("chrome")) {
-			driver = new ChromeDriver();
-		}
-		
-		else if(browser.equals("firefox")) {
-			driver = new FirefoxDriver();
-		}
-		
-		else if(browser.equals("edge")) {
-			driver = new EdgeDriver();
-		}
-		
+	public void bcConfig() throws IOException {
+		driver = new ChromeDriver();
 		sDriver=driver;
-		System.out.println("The "+browser+" browser has been launched");
+		System.out.println("The  browser has been launched");
 		wUtils.waitForPageToLoad(driver);
 		wUtils.maximizeTheWindow(driver);
-		driver.get(url);
-		System.out.println("The user has navigated to "+url);
+		driver.get("http://localhost:8888/");
+		System.out.println("The user has navigated to "+"http://localhost:8888/");
 		
 	}
 		
 	@BeforeMethod(groups = {"smoke", "regression"})
 	public void bmConfig() throws IOException {
 		
-		String username = fUtils.fetchDataFromPropertyFile("username");
-		String password = fUtils.fetchDataFromPropertyFile("password");
+		//String username = fUtils.fetchDataFromPropertyFile("username");
+		//String password = fUtils.fetchDataFromPropertyFile("password");
 		
 		LoginPage login = new LoginPage(driver);
-		login.loginAction(username, password);
+		login.loginAction("admin", "admin");
 		System.out.println("The login was successfull");
 		
 	}
@@ -103,9 +86,9 @@ public class BaseClass {
 	
 	@AfterClass(groups = {"smoke", "regression"})
 	public void acConfig() throws IOException {
-		String browser = fUtils.fetchDataFromPropertyFile("browser");
+		
 		driver.quit();
-		System.out.println("The "+browser+" browser has been closed");
+		System.out.println("The browser has been closed");
 		
 	}
 	

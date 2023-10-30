@@ -22,7 +22,7 @@ import pomRepository.LeadsPage;
 //@Listeners(genericUtility.ListenersImplementationClass.class)
 public class ToCreateLeadTest extends BaseClass {
 	
-	@Test//(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 1, groups = "smoke")
+	@Test( priority = 1, groups = "smoke")
 	public void toCreateALeadAndToVerifyTheLeadInformationTest() throws EncryptedDocumentException, IOException, SQLException {
 		
 		//Test Data

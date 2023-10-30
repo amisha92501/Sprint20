@@ -53,7 +53,7 @@
 		</dependency>
 
 	</dependencies>
-	<build>
+	<!--  <build>
 				<pluginManagement>
 					<plugins>
 						<plugin>
@@ -63,12 +63,13 @@
 							<configuration>
 								<suiteXmlFiles>
 									<suiteXmlFile>C:\Users\kumar\git\VVVTg\vtiger\testngraju.xml</suiteXmlFile>
+									<suiteXmlFile>C:\Users\kumar\git\VVVTg\vtiger\testngayush.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
 					</plugins>
 				</pluginManagement>
-			</build>
+			</build> -->
 
 	<profiles>
 		<profile>
@@ -82,7 +83,7 @@
 							<version>3.1.2</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>src\test\resources\suiteXMLFiles\SmokeTestng.xml</suiteXmlFile>
+									<suiteXmlFile>C:\Users\kumar\git\VVVTg\vtiger\testngraju.xml</suiteXmlFile>
 								</suiteXmlFiles>
 							</configuration>
 						</plugin>
@@ -101,7 +102,7 @@
 							<version>3.1.2</version>
 							<configuration>
 								<suiteXmlFiles>
-									<suiteXmlFile>src\test\resources\suiteXMLFiles\RegressionTesting.xml</suiteXmlFile>
+									<suiteXmlFile>C:\Users\kumar\git\VVVTg\vtiger\testngayush.xml</suiteXmlFile>
 								</suiteXmlFiles>
 								<systemPropertyVariables>
 								<browser>${browser}</browser>
@@ -114,44 +115,7 @@
 				</pluginManagement>
 			</build>
 		</profile>
-		<profile>
-			<id>batch</id>
-			<build>
-				<pluginManagement>
-					<plugins>
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-surefire-plugin</artifactId>
-							<version>3.1.2</version>
-							<configuration>
-								<suiteXmlFiles>
-									<suiteXmlFile>src\test\resources\suiteXMLFiles\BatchExecution.xml</suiteXmlFile>
-								</suiteXmlFiles>
-								<systemPropertyVariables>
-									<browser>${browser}</browser>
-								</systemPropertyVariables>
-							</configuration>
-						</plugin>
-
-
-					</plugins>
-				</pluginManagement>
-			</build>
-		</profile>
-
-
-
-
-	</profiles>
-
-
-
-
-
-
-
-
-
-
+		
+		</profiles>
 
 </project>

@@ -26,7 +26,7 @@ import pomRepository.VendorPage;
 //@Listeners(genericUtility.ListenersImplementationClass.class)
 public class ToCreateAProductTest extends BaseClass {
 	
-	@Test//(retryAnalyzer = genericUtility.RetryImpementationClass.class, priority = 2, groups = "regression")
+	@Test( priority = 2, groups = "regression")
 	public void toCreateAProductWithVendorInformationTest() throws EncryptedDocumentException, IOException {
 		//Test Data
 		/*String vendorName = eUtils.fetchStringDataFromExcelSheet(IPathConstant.PRODUCT_SHEETNAME, 1, 0);
